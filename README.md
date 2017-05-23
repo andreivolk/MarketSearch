@@ -13,3 +13,7 @@ The data offered is not always complete or up to date. If you have corrections o
 ## Market Data Import
 
 Due to the limited nature of the [USDA Farmers Market API](https://search.ams.usda.gov/farmersmarkets/v1/svcdesc.html) this project queries a MongoDB database populated by a USDA data file. More information [here](https://github.com/faterror/ImportUSDAMarkets).
+
+## Map Module
+
+@ngui/map found [here](https://github.com/ng2-ui/map).
