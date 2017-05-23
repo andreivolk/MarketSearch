@@ -1,0 +1,15 @@
+<div class="jumbotron">
+  <h1>Market Search</h1>
+  <p>Search for Farmers Markets near you based on your zip code.</p>
+  <div class="row">
+    <div class="col-md-10 col-xs-12">
+  <input class="form-control main-search text-center" [(ngModel)]="zipCode" (keyup.enter)="marketSearch()">
+</div>
+<div class="col-md-2 col-xs-12">
+    <a class="btn btn-lg btn-primary search-btn" (click)="marketSearch()" role="button">Search &raquo;</a>
+  </div>
+    </div>
+</div>
+<div class="alert alert-danger text-center" *ngIf="!validZip">
+  <strong>Invalid Zip code</strong>
+</div>

@@ -1,0 +1,54 @@
+<div class="loader" *ngIf="!market?.FMID">Loading...</div>
+<div class="jumbotron" *ngIf="market?.FMID">
+  <h3 class="market-heading">{{market?.MarketName}}</h3>
+  <a href="{{market?.Website}}" *ngIf="market?.Website">Market Website &nbsp; <i class="fa fa-external-link" aria-hidden="true"></i></a>
+  <div class="row social-media col-md-offset-0 col-xs-offset-0">
+    <a href="{{market?.Facebook}}" *ngIf="market?.Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+    <!-- Too many formats returned by api, some @handles while others full url, feature for another time.
+    <a href="https://twitter.com/{{market?.Twitter}}" *ngIf="market?.Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a> -->
+    <a href="{{market?.Youtube}}" *ngIf="market?.Youtube"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+  </div>
+  <h4>Address</h4>
+  <div class="well well-sm">
+  {{market?.street}} {{market?.city}}, {{market?.State}} {{market?.zip}}
+</div>
+  <h4>Dates and Times</h4>
+  <div class="well well-sm">
+  <div>{{market?.Season1Date}} {{market?.Season1Time | seasontime}}</div>
+  <div>{{market?.Season2Date}} {{market?.Season2Time | seasontime}}</div>
+  <div>{{market?.Season3Date}} {{market?.Season3Time | seasontime}}</div>
+  <div>{{market?.Season4Date}} {{market?.Season4Time | seasontime}}</div>
+</div>
+  <h4>Payment methods</h4>
+  <div class="well well-sm">
+  <div *ngIf="market?.Credit == 'Y'">Credit Card</div>
+  <div *ngIf="market?.WIC == 'Y'">WIC</div>
+  <div *ngIf="market?.WICcash == 'Y'">WIC Cash Value Voucher (CVV)</div>
+  <div *ngIf="market?.SFMNP == 'Y'">Senior Farmers' Market Nutrition Program (SFMNP)</div>
+  <div *ngIf="market?.SNAP == 'Y'">Supplemental Nutrition Assistance Program (SNAP)</div>
+</div>
+  <h4>Goods on offer</h4>
+  <div class="well well-sm">
+  <span *ngIf="market?.Organic == 'Y'">Organic food, </span><span *ngIf="market?.Bakedgoods == 'Y'">Baked goods, </span>
+  <span *ngIf="market?.Cheese == 'Y'">Cheese, </span><span *ngIf="market?.Crafts == 'Y'">Crafts, </span>
+  <span *ngIf="market?.Flowers == 'Y'">Flowers, </span><span *ngIf="market?.Eggs == 'Y'">Eggs, </span>
+  <span *ngIf="market?.Seafood == 'Y'">Seafood, </span><span *ngIf="market?.Herbs == 'Y'">Herbs, </span>
+  <span *ngIf="market?.WildHarvested == 'Y'">Wild Harvest, </span><span *ngIf="market?.Honey == 'Y'">Honey, </span>
+  <span *ngIf="market?.Jams == 'Y'"></span>Jams, <span *ngIf="market?.Maple == 'Y'">Maple, </span>
+  <span *ngIf="market?.Meat == 'Y'">Meat, </span><span *ngIf="market?.Nursery == 'Y'">Nursery, </span>
+  <span *ngIf="market?.Nuts == 'Y'">Nuts, </span><span *ngIf="market?.Plants == 'Y'">Plants, </span>
+  <span *ngIf="market?.Poultry == 'Y'"></span>Poultry, <span *ngIf="market?.Prepared == 'Y'">Prepared food, </span>
+  <span *ngIf="market?.Soap == 'Y'">Soap, </span><span *ngIf="market?.Trees == 'Y'">Trees, </span>
+  <span *ngIf="market?.Wine == 'Y'">Wine, </span><span *ngIf="market?.Coffee == 'Y'">Coffee, </span>
+  <span *ngIf="market?.Beans == 'Y'">Beans, </span><span *ngIf="market?.Tofu == 'Y'">Tofu,</span>
+  <span *ngIf="market?.Grains == 'Y'">Grains, </span><span *ngIf="market?.Juices == 'Y'">Juices, </span>
+  <span *ngIf="market?.Mushrooms == 'Y'">Mushrooms, </span><span *ngIf="market?.PetFood == 'Y'">PetFood, </span>
+  <span *ngIf="market?.Fruits == 'Y'">Fruits, </span><span *ngIf="market?.Vegetables == 'Y'">Vegetables</span>
+</div>
+  <h4>Map</h4>
+  <ngui-map zoom="17" center="{{market?.y}}, {{market?.x}}">
+    <marker position="{{market?.y}}, {{market?.x}}"></marker>
+  </ngui-map>
+  <br>
+  <span *ngIf="market?.updateTime">Last updated {{market?.updateTime}}</span>
+</div>

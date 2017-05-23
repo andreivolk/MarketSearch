@@ -1,0 +1,10 @@
+<div class="loader" *ngIf="!markets?.results.length"></div>
+<div *ngIf="markets?.results.length">
+  <div class="jumbotron">
+<h1 class="results-heading">{{markets?.results.length}} Results for {{zipCode}}</h1>
+<h3 class="results-legend"><div class="list-group-item">Name <span class="pull-right">Distance (Miles)</span></div></h3>
+<div class="list-group">
+  <a class="resultListItem" [routerLink]="['/market', market.id]" class="list-group-item" *ngFor="let market of markets?.results" [innerHtml]="market.marketname | distance"></a>
+</div>
+</div>
+</div>
