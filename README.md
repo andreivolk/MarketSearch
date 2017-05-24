@@ -10,6 +10,8 @@ Market Search is a resource for finding USDA approved Farmers Markets near you, 
 
 The data offered is not always complete or up to date. If you have corrections or updates please get in touch with the Farmers Market and Local Food Marketing representitive from the USDA [here](https://www.ams.usda.gov/about-ams/contact-us).
 
+**Live Demo** [here](https://market.avol.tech).
+
 ## Market Data Import
 
 Due to the limited nature of the [USDA Farmers Market API](https://search.ams.usda.gov/farmersmarkets/v1/svcdesc.html) this project queries a MongoDB database populated by a USDA data file. More information [here](https://github.com/faterror/ImportUSDAMarkets).
