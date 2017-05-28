@@ -1,28 +1,21 @@
-# Market
+# Market Search
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
 
-## Development server
+All of the usual commands apply.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## About
 
-## Code scaffolding
+Market Search is a resource for finding USDA approved Farmers Markets near you, based on Zip code.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+The data offered is not always complete or up to date. If you have corrections or updates please get in touch with the Farmers Market and Local Food Marketing representitive from the USDA [here](https://www.ams.usda.gov/about-ams/contact-us).
 
-## Build
+**Live Demo** [here](https://market.avol.tech).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Market Data Import
 
-## Running unit tests
+Due to the limited nature of the [USDA Farmers Market API](https://search.ams.usda.gov/farmersmarkets/v1/svcdesc.html) this project queries a MongoDB database populated by a USDA data file. More information [here](https://github.com/faterror/ImportUSDAMarkets).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Map Module
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+@ngui/map found [here](https://github.com/ng2-ui/map).
