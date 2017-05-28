@@ -26,7 +26,7 @@ const appRoutes: Routes = [
   { path: 'results/:zip', component: ResultsComponent },
   { path: 'market/:id', component: MarketComponent },
   { path: 'about', component: AboutComponent },
-  { path: '', component: SearchComponent },
+  { path: '', redirectTo:  '/search', pathMatch: 'full' },
   { path: '**', component: SearchComponent }
 ];
 
@@ -48,7 +48,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     NguiMapModule.forRoot({
-      apiUrl: 'https://maps.google.com/maps/api/js?key='+environment.googleKey}),
+      apiUrl: 'https://maps.googleapis.com/maps/api/js?key=' + environment.googleKey}),
       NguiUtilsModule
   ],
   providers: [MarketapiService, ZipCheckService,
