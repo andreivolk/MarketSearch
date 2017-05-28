@@ -13,7 +13,7 @@ export class MarketapiService {
   private response: any;
 
   public getMarkets(zip): Promise<Market[]> {
-    var apiUrl = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip;
+    var apiUrl = 'https://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=' + zip;
     return this.http.get(apiUrl).toPromise()
       .then(this.extractData);
   }
