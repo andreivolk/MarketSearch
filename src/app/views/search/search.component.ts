@@ -14,12 +14,14 @@ export class SearchComponent implements OnInit {
 
   constructor(private router: Router, private http: Http, private api: MarketapiService, private zipCheck: ZipCheckService) { }
 
-  public zipCode: number;
+  public zipCode: string;
   public validZip: boolean = true;
   public apiJSON: any;
 
   marketSearch() {
+    console.log(this.zipCode);
     this.validZip = this.zipCheck.checkZip(this.zipCode);
+    console.log(this.validZip);
     if (this.validZip) {
       this.router.navigate(['/results', this.zipCode]);
     }
