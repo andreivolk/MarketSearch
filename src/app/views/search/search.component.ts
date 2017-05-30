@@ -19,9 +19,7 @@ export class SearchComponent implements OnInit {
   public apiJSON: any;
 
   marketSearch() {
-    console.log(this.zipCode);
     this.validZip = this.zipCheck.checkZip(this.zipCode);
-    console.log(this.validZip);
     if (this.validZip) {
       this.router.navigate(['/results', this.zipCode]);
     }
